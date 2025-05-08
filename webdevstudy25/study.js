@@ -13,6 +13,19 @@ increaseBtn.addEventListener('click', function(e){
     } else if (count < 0) {
         counterNum.classList.add('redNum');
     } else {
-        counterNum.classList.remove;
+        counterNum.removeAttribute('class');
+    }
+})
+
+decreaseBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    count--;
+    counterNum.textContent = count;
+    if (count > 0) {
+        counterNum.classList.add('greenNum');
+    } else if (count < 0) {
+        counterNum.classList.add('redNum');
+    } else {
+        counterNum.removeAttribute('class');
     }
 })
