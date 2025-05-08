@@ -1,3 +1,21 @@
-p {
-    color: red;
+.btns {
+    padding: 5px;
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+.counterBox {
+    margin: 5px 10px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hCounter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
