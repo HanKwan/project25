@@ -29,3 +29,17 @@ decreaseBtn.addEventListener('click', function(e){
         counterNum.removeAttribute('class');
     }
 })
+
+resetBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    count = 0;
+    console.log(count);
+    counterNum.textContent = count;
+    if (count > 0) {
+        counterNum.classList.add('greenNum');
+    } else if (count < 0) {
+        counterNum.classList.add('redNum');
+    } else {
+        counterNum.removeAttribute('class');
+    }
+})
