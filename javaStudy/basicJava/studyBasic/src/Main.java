@@ -17,17 +17,51 @@ public class Main {
 
         // simple saving calculator
         Scanner input = new Scanner(System.in);
+        int salaryAmount;
+        float savingPercentage;
+        byte amountOfYears;
+
         // salary
-        System.out.print("Salary: ");
-        int salaryAmount = input.nextInt();
+        while (true) {
+            System.out.print("Salary: ");
+            salaryAmount = input.nextInt();
+            if (salaryAmount >= 1000 && salaryAmount <= 1000000)
+                break;
+            else
+                System.out.println("Input reasonable number between 1k and 400k");
+        }
+
+//        while (true) {
+//            System.out.print("Salary: ");
+//            salaryAmount = 0;
+//            if (!input.hasNextInt()) {
+//                System.out.println("That's not a number");
+//                continue;
+//            } else if (input.nextInt() <= 1000 || input.nextInt() >= 400000) {
+//                System.out.println("Input valid number between 70k and 400k");
+//            } else {
+//                salaryAmount = input.nextInt();
+//                break;
+//            }
+//        }
 
         // saving percentage
-        System.out.print("Saving in %: ");
-        float savingPercentage = input.nextFloat();
+        while (true) {
+            System.out.print("Saving in %: ");
+            savingPercentage = input.nextFloat();
+            if (savingPercentage < 100)
+                break;
+            System.out.println("Be reasonable");
+        }
 
         //period
-        System.out.print("Period (year): ");
-        byte amountOfYears = input.nextByte();
+        while (true) {
+            System.out.print("Period (year): ");
+            amountOfYears = input.nextByte();
+            if (amountOfYears < 100)
+                break;
+            System.out.println("You not gonna live that long");
+        }
 
         // calculation
         double totalSaving = ((salaryAmount * (savingPercentage/100)) * 12) * amountOfYears;
