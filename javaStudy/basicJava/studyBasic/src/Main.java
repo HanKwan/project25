@@ -24,31 +24,32 @@ public class Main {
         // salary
         while (true) {
             System.out.print("Salary: ");
-            salaryAmount = input.nextInt();
-            if (salaryAmount >= 1000 && salaryAmount <= 1000000)
-                break;
-            else
-                System.out.println("Input reasonable number between 1k and 400k");
-        }
+            if (!input.hasNextInt()) {
+                System.out.println("That's not a number");
+                input.next();
+                continue;
+            }
 
-//        while (true) {
-//            System.out.print("Salary: ");
-//            salaryAmount = 0;
-//            if (!input.hasNextInt()) {
-//                System.out.println("That's not a number");
-//                continue;
-//            } else if (input.nextInt() <= 1000 || input.nextInt() >= 400000) {
-//                System.out.println("Input valid number between 70k and 400k");
-//            } else {
-//                salaryAmount = input.nextInt();
-//                break;
-//            }
-//        }
+            salaryAmount = input.nextInt();
+
+            if (salaryAmount <= 1000 || salaryAmount >= 400000) {
+                System.out.println("Input valid number between 70k and 400k");
+            } else {
+                break;
+            }
+        }
 
         // saving percentage
         while (true) {
             System.out.print("Saving in %: ");
+            if (!input.hasNextInt()) {
+                System.out.println("That's not a number");
+                input.next();
+                continue;
+            }
+
             savingPercentage = input.nextFloat();
+
             if (savingPercentage < 100)
                 break;
             System.out.println("Be reasonable");
@@ -57,7 +58,14 @@ public class Main {
         //period
         while (true) {
             System.out.print("Period (year): ");
+            if (!input.hasNextInt()) {
+                System.out.println("That's not a number");
+                input.next();
+                continue;
+            }
+
             amountOfYears = input.nextByte();
+
             if (amountOfYears < 100)
                 break;
             System.out.println("You not gonna live that long");
