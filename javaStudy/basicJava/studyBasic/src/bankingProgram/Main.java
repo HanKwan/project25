@@ -9,7 +9,7 @@ public class Main {
     public static void main (String[] args) {
 
         // banking program
-        
+
         int choice;
         int balance = 0;
         boolean isRunning = true;
@@ -28,7 +28,7 @@ public class Main {
             switch (choice) {
                 case 1 -> showBalance(balance);
                 case 2 -> balance += deposit();
-                case 3 -> System.out.println("3");
+                case 3 -> balance -= withdraw(balance);
                 case 4 -> isRunning = false;
                 default -> System.out.println("Invalid");
             }
@@ -51,6 +51,19 @@ public class Main {
                 return 0;
             } else {
                 return amount;
+            }
+        }
+
+        // withdraw
+        static int withdraw (int balance) {
+            int withdrawAmount;
+            System.out.print("Withdraw amount: ");
+            withdrawAmount = scanner.nextInt();
+            if (balance < withdrawAmount) {
+                System.out.println("Your balance is lower than " +withdrawAmount);
+                return 0;
+            } else {
+                return withdrawAmount;
             }
         }
 }
