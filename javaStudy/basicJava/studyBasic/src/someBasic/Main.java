@@ -1,5 +1,5 @@
-import java.text.NumberFormat;
-import java.util.Locale;
+package someBasic;
+
 import java.util.Random;
 import java.util.Scanner;
 
