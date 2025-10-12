@@ -47,7 +47,8 @@ public class Main {
                 }
             }
         }
-        System.out.println("Your balance is empty");
+        System.out.println("!!!");
+        System.out.println("Your balance is empty, come back next time:)");
 
     }
     static String[] spinTheWheel() {
