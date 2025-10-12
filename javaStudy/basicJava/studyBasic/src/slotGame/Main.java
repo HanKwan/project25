@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int bet;
         int balance = 1000;
-        String row;
+        String[] symbols;
         String playAgain;
 
         while (balance > 0) {
@@ -23,7 +23,9 @@ public class Main {
             } else {
                 System.out.println("Spinning ....");
                 balance -= bet;
-                spinTheWheel();
+                symbols = spinTheWheel();
+                showSymbols(symbols);
+                checkWin(symbols, bet);
             }
         }
         System.out.println("Your balance is empty");
@@ -38,7 +40,14 @@ public class Main {
         for (int i = 0; i<3; i++) {     // not i<symbol.length
             displaySymbols[i] = symbols[random.nextInt(symbols.length)];
         }
-        System.out.println(displaySymbols[0] + displaySymbols[1] + displaySymbols[2]);
         return displaySymbols;
+    }
+    static void showSymbols(String[] displaySymbol) {
+        System.out.println("--------------");
+        System.out.println(" " + String.join(" | ", displaySymbol));
+        System.out.println("--------------");
+    }
+    static int checkWin(String symbols, int bet) {
+        return 0;
     }
 }
