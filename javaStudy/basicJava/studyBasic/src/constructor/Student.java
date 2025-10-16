@@ -1,4 +1,4 @@
-package constructer;
+package constructor;
 
 public class Student {
 
