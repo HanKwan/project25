@@ -17,17 +17,35 @@ public class Main {
             wordState.add('_');
         }
 
-        System.out.println("Guess the pokemon");
-        System.out.println("*****************");
-        System.out.println();
-        for (char c : wordState) {
-            System.out.print(c + " ");
-        }
-        System.out.println();
+        while (wrongGuess < 5) {
 
-        System.out.print("Guess the pokemon'n name: ");
-        char userGuess = scanner.next().toLowerCase().charAt(0);
-        System.out.println(userGuess);
+            System.out.println("Guess the pokemon");
+            System.out.println("*****************");
+            System.out.println();
+            for (char c : wordState) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+
+            System.out.print("Guess the pokemon's name: ");
+            char userGuess = scanner.next().toLowerCase().charAt(0);
+            System.out.println(userGuess);
+
+            // check if correct\
+            if (pokemon.indexOf(userGuess) >= 0) {
+                System.out.println("correct^^");
+
+                // replacing character
+                for (int i = 0; i < pokemon.length(); i++) {
+                    if (pokemon.charAt(i) == userGuess) {
+                        wordState.set(i, userGuess);
+                    }
+                }
+
+            } else {
+                System.out.println("its not in the word:<");
+            }
+        }
     }
 
     static String health (int wrongGuess) {
