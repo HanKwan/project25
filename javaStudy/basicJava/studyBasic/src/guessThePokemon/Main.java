@@ -13,15 +13,20 @@ public class Main {
         int wrongGuess = 0;
         Scanner scanner = new Scanner(System.in);
 
+        // make the words blank
         for (int i = 0; i < pokemon.length(); i++) {
             wordState.add('_');
         }
 
+        // game body
         while (wrongGuess < 5) {
 
             System.out.println("Guess the pokemon");
             System.out.println("*****************");
-            System.out.println();
+            System.out.println("Your health " + health(wrongGuess));
+            // System.out.println();
+
+            // better format for the word display
             for (char c : wordState) {
                 System.out.print(c + " ");
             }
@@ -31,29 +36,36 @@ public class Main {
             char userGuess = scanner.next().toLowerCase().charAt(0);
             System.out.println(userGuess);
 
-            // check if correct\
+            // check if correct
             if (pokemon.indexOf(userGuess) >= 0) {
-                System.out.println("correct^^");
+                System.out.println("correct guess^^");
+                System.out.println();
 
                 // replacing character
                 for (int i = 0; i < pokemon.length(); i++) {
                     if (pokemon.charAt(i) == userGuess) {
                         wordState.set(i, userGuess);
-
                     }
-                    if (!wordState.contains('_')) {
-                        System.out.println("YOU GUESSED THE POKEMON");
-                        break;
-                    }
+                }
+                // all correct guess
+                if (!wordState.contains('_')) {
+                    System.out.print("Your health " + health(wrongGuess));
+                    System.out.println("YOU GUESSED THE POKEMON");
+                    System.out.println();
+                    break;
                 }
 
             } else {
-                System.out.println("its not in the word:<");
+                System.out.println(userGuess + " is not in the word:<");
+                System.out.println();
                 wrongGuess++;
             }
         }
 
-        System.out.println("GAME OVER");
+        if (wrongGuess == 5) {
+            System.out.print("Your health " + health(wrongGuess));
+            System.out.println("GAME OVER");
+        }
     }
 
     static String health (int wrongGuess) {
