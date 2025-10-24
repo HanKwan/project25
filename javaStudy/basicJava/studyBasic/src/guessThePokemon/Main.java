@@ -39,13 +39,21 @@ public class Main {
                 for (int i = 0; i < pokemon.length(); i++) {
                     if (pokemon.charAt(i) == userGuess) {
                         wordState.set(i, userGuess);
+
+                    }
+                    if (!wordState.contains('_')) {
+                        System.out.println("YOU GUESSED THE POKEMON");
+                        break;
                     }
                 }
 
             } else {
                 System.out.println("its not in the word:<");
+                wrongGuess++;
             }
         }
+
+        System.out.println("GAME OVER");
     }
 
     static String health (int wrongGuess) {
