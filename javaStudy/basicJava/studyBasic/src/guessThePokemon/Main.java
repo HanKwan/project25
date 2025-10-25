@@ -1,13 +1,34 @@
 package guessThePokemon;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String pokemon = "charmander";
+        // getting random pokmon from file
+        String filePath = "src/guessThePokemon/pokemonList.txt";
+        ArrayList<String> pokemons = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                pokemons.add(line.trim());
+            }
+
+        } catch (IOException e) {
+            System.out.println("err");
+        }
+
+        Random random = new Random();
+        String pokemon = pokemons.get(random.nextInt(pokemons.size()));
 
         ArrayList<Character> wordState = new ArrayList<>();
         int wrongGuess = 0;
@@ -50,7 +71,8 @@ public class Main {
                 // all correct guess
                 if (!wordState.contains('_')) {
                     System.out.print("Your health " + health(wrongGuess));
-                    System.out.println("YOU GUESSED THE POKEMON");
+                    System.out.println("YOU GUESSED THE POKEMON!");
+                    System.out.println("The pokemon is " + pokemon);
                     System.out.println();
                     break;
                 }
@@ -64,7 +86,9 @@ public class Main {
 
         if (wrongGuess == 5) {
             System.out.print("Your health " + health(wrongGuess));
-            System.out.println("GAME OVER");
+            System.out.println("GAME OVER!");
+            System.out.println("The pokemon is " + pokemon);
+
         }
     }
 
