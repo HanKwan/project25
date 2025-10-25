@@ -55,7 +55,6 @@ public class Main {
 
             System.out.print("Guess the pokemon's name: ");
             char userGuess = scanner.next().toLowerCase().charAt(0);
-            System.out.println(userGuess);
 
             // check if correct
             if (pokemon.indexOf(userGuess) >= 0) {
@@ -65,6 +64,12 @@ public class Main {
                 // replacing character
                 for (int i = 0; i < pokemon.length(); i++) {
                     if (pokemon.charAt(i) == userGuess) {
+                        for (int j = 0; j < wordState.size(); j++) {
+                            if (userGuess == wordState.get(j)) {
+                                System.out.println("You already guessed using " + userGuess);
+                                System.out.println();
+                            }
+                        }
                         wordState.set(i, userGuess);
                     }
                 }
