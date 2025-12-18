@@ -7,20 +7,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        Myrunnable myrunnable = new Myrunnable();
+        Thread thread = new Thread(myrunnable);
+        thread.setDaemon(true);         // ending thread when the main thread finished (the time up message)
+        thread.start();
+
         System.out.print("Enter name in 5sec: ");
         String name = scanner.nextLine();
-
-        for (int i=1; i<=5; i++) {
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                System.out.println("got interrupted");
-            }
-            if (i == 5) {
-                System.out.println("time's up");
-            }
-        }
 
         System.out.println("hello, " + name);
 
