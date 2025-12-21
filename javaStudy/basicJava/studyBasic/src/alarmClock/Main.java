@@ -21,5 +21,9 @@ public class Main {
                 System.out.println("input TIME");;
             }
         }
+
+        AlarmClock alarmClock = new AlarmClock(alarmTime);
+        Thread alarmThread = new Thread(alarmClock);
+        alarmThread.start();
     }
 }
