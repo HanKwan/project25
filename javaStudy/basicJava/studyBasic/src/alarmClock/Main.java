@@ -16,7 +16,7 @@ public class Main {
                 String inputTime = scanner.nextLine();
 
                 alarmTime = LocalTime.parse(inputTime, formatter);
-                System.out.println(alarmTime);
+                System.out.println("setting alarm on " + alarmTime);
             } catch (Exception e) {
                 System.out.println("input TIME");;
             }
