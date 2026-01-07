@@ -4,7 +4,7 @@ import java.time.LocalTime;
 
 public class AlarmClock implements Runnable{
 
-    private LocalTime alarmTime;
+    private final LocalTime alarmTime;
 
     public AlarmClock(LocalTime alarmTime) {
         this.alarmTime = alarmTime;
