@@ -45,10 +45,10 @@ public class Main {
             System.out.println("Unsupported file");
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
-        } catch (IOException e) {
-            System.out.println("Something is wrong");
         } catch (LineUnavailableException e) {
             System.out.println("line unavailable");
+        }  catch (IOException e) {
+            System.out.println("Something is wrong");
         } finally {
             System.out.println("bye");
         }
