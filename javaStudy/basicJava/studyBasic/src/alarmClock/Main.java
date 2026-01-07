@@ -1,5 +1,6 @@
 package alarmClock;
 
+import java.io.File;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -9,6 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H:mm");
         LocalTime alarmTime = null;
+
+        String filePath = "src/alarmClock/forAlarmNoise.wav";
 
         while (alarmTime == null) {
             try {
@@ -22,7 +25,7 @@ public class Main {
             }
         }
 
-        AlarmClock alarmClock = new AlarmClock(alarmTime);
+        AlarmClock alarmClock = new AlarmClock(alarmTime, filePath);
         Thread alarmThread = new Thread(alarmClock);
         alarmThread.start();
     }

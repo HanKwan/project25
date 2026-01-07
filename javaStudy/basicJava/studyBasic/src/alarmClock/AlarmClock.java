@@ -1,13 +1,20 @@
 package alarmClock;
 
+import javax.sound.sampled.*;
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalTime;
 
 public class AlarmClock implements Runnable{
 
     private final LocalTime alarmTime;
+    private final String filePath;
 
-    public AlarmClock(LocalTime alarmTime) {
+    public AlarmClock(LocalTime alarmTime, String filePath) {
         this.alarmTime = alarmTime;
+        this.filePath = filePath;
     }
 
     @Override
@@ -28,6 +35,29 @@ public class AlarmClock implements Runnable{
             System.out.println("The time entered had been passed.");
         }
 
+        System.out.println();
+        System.out.println("Alarm noise");
+        playAlarmSound(filePath);
 
+    }
+    public void playAlarmSound(String filePath) {
+        File file = new File(filePath);
+
+        try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(file)) {
+
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            clip.start();
+            Thread.sleep(5000);
+
+        } catch (UnsupportedAudioFileException | LineUnavailableException e) {
+            System.out.println("The file is unsupported");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("Something is wrong");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
