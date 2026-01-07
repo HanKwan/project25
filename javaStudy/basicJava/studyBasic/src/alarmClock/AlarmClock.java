@@ -13,16 +13,21 @@ public class AlarmClock implements Runnable{
     @Override
     public void run() {
 
-        while (LocalTime.now().isBefore(alarmTime)) {
-            try {
-                Thread.sleep(1000);
-                LocalTime now = LocalTime.now();
+        if (LocalTime.now().isBefore(alarmTime)) {
+            while (LocalTime.now().isBefore(alarmTime)) {
+                try {
+                    Thread.sleep(1000);
+                    LocalTime now = LocalTime.now();
 
-                System.out.printf("\r%02d:%02d:%02d", now.getHour(), now.getMinute(), now.getSecond());
-            } catch (InterruptedException e) {
-                System.out.println("thread interrupted");
+                    System.out.printf("\r%02d:%02d:%02d", now.getHour(), now.getMinute(), now.getSecond());
+                } catch (InterruptedException e) {
+                    System.out.println("thread interrupted");
+                }
             }
+        } else {
+            System.out.println("The time entered had been passed.");
         }
+
 
     }
 }
