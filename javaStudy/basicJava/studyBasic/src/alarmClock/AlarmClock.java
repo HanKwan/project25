@@ -6,15 +6,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.Scanner;
 
 public class AlarmClock implements Runnable{
 
     private final LocalTime alarmTime;
     private final String filePath;
+    private final Scanner scanner;
 
-    public AlarmClock(LocalTime alarmTime, String filePath) {
+    public AlarmClock(LocalTime alarmTime, String filePath, Scanner scanner) {
         this.alarmTime = alarmTime;
         this.filePath = filePath;
+        this.scanner = scanner;
     }
 
     @Override
@@ -36,7 +39,7 @@ public class AlarmClock implements Runnable{
         }
 
         System.out.println();
-        System.out.println("Alarm noise");
+        System.out.println("****Alarm is ringing!!****");
         playAlarmSound(filePath);
 
     }
@@ -48,7 +51,9 @@ public class AlarmClock implements Runnable{
             Clip clip = AudioSystem.getClip();
             clip.open(audioStream);
             clip.start();
-            Thread.sleep(5000);
+            System.out.print("Press ENTER to stop: ");
+            scanner.nextLine();
+            clip.close();
 
         } catch (UnsupportedAudioFileException | LineUnavailableException e) {
             System.out.println("The file is unsupported");
@@ -56,8 +61,6 @@ public class AlarmClock implements Runnable{
             System.out.println("File not found");
         } catch (IOException e) {
             System.out.println("Something is wrong");
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
 }

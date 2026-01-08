@@ -21,11 +21,11 @@ public class Main {
                 alarmTime = LocalTime.parse(inputTime, formatter);
                 System.out.println("setting alarm on " + alarmTime);
             } catch (Exception e) {
-                System.out.println("input TIME");
+                System.out.println("input valid TIME");
             }
         }
 
-        AlarmClock alarmClock = new AlarmClock(alarmTime, filePath);
+        AlarmClock alarmClock = new AlarmClock(alarmTime, filePath, scanner);
         Thread alarmThread = new Thread(alarmClock);
         alarmThread.start();
     }
