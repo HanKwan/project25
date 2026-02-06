@@ -2,19 +2,19 @@ package com.firstIntoSP.first;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+//@RestController
 public class FirstApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FirstApplication.class, args);
+        var contact = SpringApplication.run(FirstApplication.class, args);
+
+        MyFirstClass myFirstClass = contact.getBean(MyFirstClass.class);
+        System.out.println(myFirstClass.sayHello());
 	}
 
-    @GetMapping
-    public String hello() {
-        return "hello spring boot";
+    public MyFirstClass myFirstClass() {
+        return new MyFirstClass();
     }
 }
