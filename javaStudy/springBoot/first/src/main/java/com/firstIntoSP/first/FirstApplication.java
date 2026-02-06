@@ -10,8 +10,8 @@ public class FirstApplication {
 	public static void main(String[] args) {
         var contact = SpringApplication.run(FirstApplication.class, args);
 
-        MyFirstClass myFirstClass = contact.getBean("sayHelloBean",MyFirstClass.class);
-        System.out.println(myFirstClass.sayHello());
+        MyFirstService myFirstService = contact.getBean(MyFirstService.class);
+        System.out.println(myFirstService.useMethodFromMyFirstClass());
 	}
 
 }

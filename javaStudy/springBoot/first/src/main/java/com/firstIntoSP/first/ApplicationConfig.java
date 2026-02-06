@@ -8,7 +8,7 @@ public class ApplicationConfig {
 
     @Bean("sayHelloBean")
     public MyFirstClass myFirstClass() {
-        return new MyFirstClass();
+        return new MyFirstClass("the value of myVar");
     }
 
 }
