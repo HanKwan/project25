@@ -12,6 +12,8 @@ public class FirstApplication {
 
         MyFirstService myFirstService = contact.getBean(MyFirstService.class);
         System.out.println(myFirstService.useMethodFromMyFirstClass());
+        System.out.println(myFirstService.getCustomProperty());
+        System.out.println(myFirstService.getCustomInteger());
 	}
 
 }
