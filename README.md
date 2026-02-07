@@ -1,10 +1,26 @@
-# Hi, I'm Han 
+# Java and Backend Development Study
 
-I used to study **PHP**, but after a 2-year break, 
-I’m starting fresh with **Java**. Most coding concepts are a bit rusty, 
-but I’m excited to relearn, practice, and build new projects!  
+This repository contains my Java-focused study and practice work as I prepare for backend internships and a full-time software engineering role in Japan.
 
-## Current Focus
-- Java fundamentals & OOP
-- Small practice projects
-- Improving coding skills from scratch
+## Structure
+
+### javaStudy  
+Main learning area focused on Java fundamentals and backend development.
+
+- basicJava: Core Java practice fundamentals
+- spring: Spring Boot study and backend application development (in progress)
+
+### Other Folders
+
+JavaScript and web-related folders contain short warm-up exercises created to refresh programming habits. These are not the main focus of this repository.
+
+### Technologies
+
+- Java
+- Spring Boot (learning)
+- HTML / CSS / JavaScript (basic refresher)
+- Git / GitHub
+
+### Goal
+
+To build a strong Java backend foundation and transition into real-world Spring Boot development.
