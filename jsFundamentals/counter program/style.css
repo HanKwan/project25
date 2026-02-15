@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#countLable {
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 5px 8px;
+    margin: 3px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+#increaseBtn:hover {
+    background-color: rgb(163, 237, 171);
+}
+
+#decreaseBtn:hover {
+    background-color: rgb(249, 120, 120);
+}
+
+#resetBtn:hover {
+    background-color: rgb(144, 238, 252);
+}
