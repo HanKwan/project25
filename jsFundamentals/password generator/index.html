@@ -13,11 +13,11 @@
     
         <form id="values">
             <label for="lengthOfPw" id="pwLength">The length of the password</label><br>
-            <input type="number" id="lengthOfPw" min="1"><br>
+            <input type="number" id="lengthOfPw" min="3" max="15"><br>
             <input type="checkbox" id="lowerCase">With lower case <br>
-            <input type="checkbox">With upper case <br>
-            <input type="checkbox">Include numbers <br>
-            <input type="checkbox">Include symbols <br>
+            <input type="checkbox" id="upperCase">With upper case <br>
+            <input type="checkbox" id="includeNum">Include numbers <br>
+            <input type="checkbox" id="includeSymbol">Include symbols <br>
             <button type="submit" id="submit">Submit</button>
         </form>
     
