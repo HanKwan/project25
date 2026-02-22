@@ -1,3 +1,9 @@
+function displayPerson({firstName, lastName, age, job="unemplyed"}) {   // need to add {} for the parameters
+    console.log(`This is ${firstName} ${lastName}`);
+    console.log(`Age: ${age}`);
+    console.log(`Job: ${job}`);
+}
+
 const person1 = {
     firstName: "Hiroshi",
     lastName: "Tanaka",
@@ -11,7 +17,4 @@ const person2 = {
     age: 28,
 }
 
-const {firstName, lastName, age, job="unemployed"} = person2;
-
-console.log(firstName);
-console.log(job);
+displayPerson(person2);
