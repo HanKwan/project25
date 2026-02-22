@@ -1,12 +1,17 @@
-function sayHello(callback) {
+function sum(callback, x, y) {
+
+    console.log("It's calculating...");
     setTimeout(() => {
-        console.log("hello");
-        callback();
+
+        let ressult = x + y;
+        
+        callback(ressult);
     }, 3000);
+
 }
 
-function sayGoodbye() {
-    console.log("bye");
+function displayResult(ressult) {
+    console.log(`Your result is ${ressult}`);
 }
 
-sayHello(sayGoodbye);
+sum(displayResult, 3, 4);
