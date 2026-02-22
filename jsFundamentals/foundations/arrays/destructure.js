@@ -9,4 +9,9 @@ const person2 = {
     firstName: "Yuki",
     lastName: "Yamamoto",
     age: 28,
-} 
+}
+
+const {firstName, lastName, age, job="unemployed"} = person2;
+
+console.log(firstName);
+console.log(job);
