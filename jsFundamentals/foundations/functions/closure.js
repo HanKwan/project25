@@ -9,14 +9,25 @@ function createBatttle() {
     function checkWin() {
         if (enmyHp <= 0) {
             console.log("GAME OVER! YOU WIN");
+            document.getElementById("winMessage").textContent = "GAME OVER! YOU WIN"
             return true;
         }
         return false;
     }
 
+    function updateDispaly() {
+        if (enmyHp <= 0) {
+            document.getElementById("enmyHp").textContent = `Enmey HP: 0`;
+            return;
+        }
+        document.getElementById("enmyHp").textContent = `Enmey HP: ${enmyHp}`;
+        document.getElementById("mana").textContent = `Your mana: ${mana}`;
+    }
+
     function swordHit() {
-        attack += 10;
-        enmyHp -= attack;
+        if (checkWin()) return;
+
+        enmyHp -= 10;
         console.log(`You dealt +10dmg with your sword`);
 
         if (enmyHp <= 0) {
@@ -24,10 +35,13 @@ function createBatttle() {
         } else {
             console.log(`Enemy health: ${enmyHp}hp`);
         }
+        updateDispaly();
         checkWin();
     }
 
     function useFireBall() {
+        if (checkWin()) return;
+
         if (mana <= 8) {
             console.log("Noth enough mana!");
             return;
@@ -38,6 +52,7 @@ function createBatttle() {
         console.log(`You used -9mana to cast fire spell. Mana: ${mana}`);
         console.log(`You dealt +14dmg with magic`);
         console.log(`Enemy health: ${enmyHp}hp`);
+        updateDispaly();
         checkWin();
     }
 
