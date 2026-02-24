@@ -1,8 +1,8 @@
 
 const display = document.getElementById("displayTimer");
-let timer = null;
+let timer = null;   // 0 has value type of number. null holds no timer
 let startTime = 0;
-let elapsedTime = 0;
+let elapsedTime = 0;    // time starts from when the btn is pressed
 let isRunning = false;
 
 function start() {
@@ -10,7 +10,7 @@ function start() {
     if (!isRunning) {
         isRunning = true;
         startTime = Date.now() - elapsedTime;
-        timer = setInterval(displayTimer, 10); 
+        timer = setInterval(displayTimer, 10);  // callback displayTimer every 10 milisecs 
     }
 }
 
@@ -19,12 +19,13 @@ function stop() {
     if (isRunning) {
         isRunning = false;
         clearInterval(timer);
-        elapsedTime = Date.now() - startTime;  
+        elapsedTime = Date.now() - startTime;
     }
 }
 
 function reset() {
     
+    clearInterval(timer);   // reset after start without stopping will caus bug
     timer = null;
     startTime = 0;
     elapsedTime = 0;
