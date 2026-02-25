@@ -23,6 +23,10 @@ function inputValue(value) {
 
 function inputOperator(op) {
 
+    if (operator && secondNumber === "") {
+        return;
+    }
+
     if (firstNumber && secondNumber) {
         calculate();
     }
