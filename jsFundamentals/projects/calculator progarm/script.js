@@ -16,21 +16,19 @@ function inputValue(value) {
         secondNumber += value;
         display.value += value;
     }
-    console.log(`first ${firstNumber}`);
-    console.log(`second ${secondNumber}`);
-    
+
 }
 
 function inputOperator(op) {
-
+    
     if (operator && secondNumber === "") {
         return;
     }
-
+    
     if (firstNumber && secondNumber) {
         calculate();
     }
-
+        
     operator = op;
     display.value += operator;
 }
@@ -53,7 +51,15 @@ function calculate() {
         case "+": result = firstNum + secondNum; break;
         case "-": result = firstNum - secondNum; break;
         case "*": result = firstNum * secondNum; break;
-        case "/": result = firstNum / secondNum; break;
+        case "/": 
+            if (secondNum === 0) {
+                    display.value = "Error";
+                    firstNumber = "";
+                    operator = "";
+                    secondNumber = "";
+                    return;
+                } 
+                result = firstNum / secondNum; break;
         default:
             return;
     }
@@ -66,5 +72,7 @@ function calculate() {
 
 function updateDisplay() {
     calculate();
-    display.value = firstNumber;
+    if (firstNumber) {
+        display.value = firstNumber;
+    }
 }
