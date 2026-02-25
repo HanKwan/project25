@@ -3,19 +3,16 @@ let display = document.getElementById("display");
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
-let isNewInput = false;
-
-console.log(firstNumber);
 
 function inputValue(value) {
 
     if (operator === "") {
         firstNumber += value;
-        display.value = firstNumber;
     } else {
         secondNumber += value;
-        display.value += value;
     }
+
+    display.value += value;
 
 }
 
@@ -64,7 +61,7 @@ function calculate() {
             return;
     }
 
-    firstNumber = result.toString();
+    firstNumber = parseFloat(result.toFixed(2).toString());
     secondNumber = "";
     operator = "";
 
