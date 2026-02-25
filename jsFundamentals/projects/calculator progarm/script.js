@@ -6,6 +6,18 @@ let secondNumber = "";
 
 function inputValue(value) {
 
+    if (firstNumber === "" && value === ".") {
+        firstNumber += "0.";
+        display.value += "0."
+        return;
+    }
+
+    if (firstNumber && value === ".") {
+        secondNumber += "0.";
+        display.value += "0."
+        return;
+    }
+
     if (operator === "") {
         firstNumber += value;
     } else {
