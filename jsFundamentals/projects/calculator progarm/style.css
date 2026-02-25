@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 40%, 0.517);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#container {
+    background-color: hsla(201, 60%, 32%, 0.428);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    width: 260px;
+}
+
+#display {
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 3px solid #5656566a;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1.8rem;
+    text-align: right;
+    color: #222;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "clear clear divide multiply"
+        "seven eight nine minus"
+        "four  five  six  plus"
+        "one   two   three equal"
+        "zero  zero  dot   equal";
+    gap: 8px;
+}
+
+button {
+    padding: 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: #222;
+    transition: background-color 0.15s;
+}
+
+button:hover  { background-color: #e0e0e0; }
+button:active { background-color: #d0d0d0; }
+
+.opBtn { background-color: #e8f0fe; color: #1a73e8; }
+.opBtn:hover { background-color: #d2e3fc; }
+
+#clearBtn  { grid-area: clear;    background-color: #fce8e8; color: #d93025; }
+#equalBtn  { grid-area: equal;    background-color: #1a73e8; color: #fff; }
+#zeroBtn   { grid-area: zero; }
+#equalBtn:hover { background-color: #1558b0; }
+
+/* named grid areas */
+button[onclick="inputValue('7')"] { grid-area: seven; }
+button[onclick="inputValue('8')"] { grid-area: eight; }
+button[onclick="inputValue('9')"] { grid-area: nine; }
+button[onclick="inputValue('4')"] { grid-area: four; }
+button[onclick="inputValue('5')"] { grid-area: five; }
+button[onclick="inputValue('6')"] { grid-area: six; }
+button[onclick="inputValue('1')"] { grid-area: one; }
+button[onclick="inputValue('2')"] { grid-area: two; }
+button[onclick="inputValue('3')"] { grid-area: three; }
+button[onclick="inputValue('.')"] { grid-area: dot; }
+button[onclick="inputValue('/')"] { grid-area: divide; }
+button[onclick="inputValue('*')"] { grid-area: multiply; }
+button[onclick="inputValue('-')"] { grid-area: minus; }
+button[onclick="inputValue('+')"] { grid-area: plus; }
