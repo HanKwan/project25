@@ -50,10 +50,10 @@ function calculate() {
     let result;
 
     switch (operator) {
-        case "+":
-            result = firstNum + secondNum;
-            break;
-    
+        case "+": result = firstNum + secondNum; break;
+        case "-": result = firstNum - secondNum; break;
+        case "*": result = firstNum * secondNum; break;
+        case "/": result = firstNum / secondNum; break;
         default:
             return;
     }
