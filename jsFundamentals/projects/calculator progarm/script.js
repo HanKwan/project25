@@ -18,6 +18,16 @@ function inputValue(value) {
 
 function inputOperator(op) {
     
+    if (firstNumber === "" && op === "-") {
+        firstNumber = "-";
+        display.value = "-";
+        return;
+    }
+
+    if (firstNumber === "-") {
+        return;
+    }
+
     if (operator && secondNumber === "") {
         return;
     }
