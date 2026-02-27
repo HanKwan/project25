@@ -9,14 +9,21 @@ Main learning area focused on Java fundamentals and backend development.
 - spring: Spring Boot study and backend application development (in progress)
 
 ### jsFundamentals
+Vanilla JS fundamentals and mini-projects.
 
-JavaScript and web-related exercises created while studying frontend fundamentals.
+- foundations: callbacks, closures, array methods (map, filter, reduce)
+- projects: counter, digital clock, stopwatch, calculator, dice roller, password generator
 
-### Technologies
+#### Purpose:
+- Prepare for React and TypeScript
+- Build modern frontend skills
+
+### Tech Stack
 
 - Java
 - Spring Boot (learning)
-- HTML / CSS / JavaScript (basic refresher)
+- HTML / CSS
+- JavaScript
 - Git / GitHub
 
 ### Goal
