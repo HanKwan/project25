@@ -1,16 +1,16 @@
 
 const myBox = document.getElementById("myBox");
 
-let movement = 50;
+let movement = 30;
 let x = 0;
 let y = 0;
 
 document.addEventListener("keyup", event => {
-    myBox.textContent = "🙂"
+    myBox.textContent = "🙂";
     myBox.style.backgroundColor = "hsla(0, 64%, 56%, 0.78)"
 });
 
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown", event => {     // keypress doesn't include arrow keys
 
     myBox.textContent = "🤣";
     myBox.style.backgroundColor = "hsl(123, 80%, 71%)";
@@ -33,9 +33,6 @@ document.addEventListener("keydown", event => {
             default:
                 break;
         }
-        console.log(x);
-        console.log(y);
-        
 
         myBox.style.top = `${y}px`;
         myBox.style.left = `${x}px`;
