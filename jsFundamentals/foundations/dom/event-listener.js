@@ -1,15 +1,43 @@
 
 const myBox = document.getElementById("myBox");
 
-document.addEventListener("keydown", event => {
-    console.log(`keydown: ${event.key}`);  
-});
+let movement = 50;
+let x = 0;
+let y = 0;
 
 document.addEventListener("keyup", event => {
-    console.log(`keyup: ${event.key}`);  
+    myBox.textContent = "🙂"
+    myBox.style.backgroundColor = "hsla(0, 64%, 56%, 0.78)"
 });
 
-myBox.addEventListener("click", event => {
-    console.log(`clicked the smily face`);
-    
+document.addEventListener("keydown", event => {
+
+    myBox.textContent = "🤣";
+    myBox.style.backgroundColor = "hsl(123, 80%, 71%)";
+
+    if (event.key.startsWith("Arrow")) {
+        
+        switch (event.key) {
+            case "ArrowUp":
+                y -= movement;
+                break;
+            case "ArrowDown":
+                y += movement;
+                break;
+            case "ArrowLeft":
+                x -= movement;
+                break;
+            case "ArrowRight":
+                x += movement;
+                break;
+            default:
+                break;
+        }
+        console.log(x);
+        console.log(y);
+        
+
+        myBox.style.top = `${y}px`;
+        myBox.style.left = `${x}px`;
+    }
 })

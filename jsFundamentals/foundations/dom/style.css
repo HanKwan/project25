@@ -4,8 +4,8 @@ body {
 
 #myBox {
     background-color: hsl(123, 80%, 71%);
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
