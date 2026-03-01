@@ -43,10 +43,11 @@ body {
 }
 
 #choices {
-    margin-top: 20px;    
+    margin-top: 20px;
+    text-align: center;  
 }
 
-#playerChoice, #computerChoice {
+#playerPick, #computerPick {
     font-size: 1.5rem;
 }
 
