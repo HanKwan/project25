@@ -57,13 +57,11 @@ body {
 }
 
 .winResult {
-    font-size: 1.9rem;
     font-weight: bold;
-    color: hsla(120, 98%, 65%, 0.853);
+    color: hsla(120, 97%, 38%, 0.941);
 }
 
 .loseResult {
-    font-size: 1.9rem;
     font-weight: bold;
     color: hsla(0, 98%, 65%, 0.853);
 }
