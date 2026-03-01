@@ -55,3 +55,15 @@ body {
     font-size: 1.9rem;
     font-weight: bold;
 }
+
+.winResult {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: hsla(120, 98%, 65%, 0.853);
+}
+
+.loseResult {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: hsla(0, 98%, 65%, 0.853);
+}

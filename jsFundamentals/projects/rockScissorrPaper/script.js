@@ -18,7 +18,7 @@ function playGame(playerChoice) {
                 result = computerChoice === "Scissor" ? "You Win!" : "You Lose!";
                 break;
             case "Paper":
-                result = computerChoice === "Scissor" ? "You Loose!" : "You Win!";
+                result = computerChoice === "Scissor" ? "You Lose!" : "You Win!";
                 break;
             case "Scissor":
                 result = computerChoice === "Paper" ? "You Win!" : "You Lose!";
@@ -30,4 +30,17 @@ function playGame(playerChoice) {
     playerPick.textContent = `Player Choose: ${playerChoice}`;
     computerPick.textContent = `Computer Choose: ${computerChoice}`;
     resultDisplay.textContent = result;
+
+    resultDisplay.classList.remove("winResult", "loseResult");
+
+    switch (result) {
+        case "You Win!":
+            resultDisplay.classList.add("winResult");
+            break;
+        case "You Lose!":
+            resultDisplay.classList.add("loseResult");
+            break;
+        default:
+            break;
+    }
 }
